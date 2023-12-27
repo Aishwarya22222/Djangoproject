@@ -1,0 +1,79 @@
+{% extends 'admin/adminlayout.html' %}
+
+{% block title %}
+
+<title>Admin-users-order</title>
+
+{% endblock %}
+
+{% block main-content %}
+<!-- start of order section -->
+<div class="container">
+    {% for msg in messages %}
+
+            {% if msg.level == DEFAULT_MESSAGE_LEVELS.SUCCESS %}
+            <div class="alert alert-success">
+                {{msg}}
+
+            </div>
+
+            {% endif %}
+
+            {% endfor %}
+
+            {% for msg in messages %}
+
+            {% if msg.level == DEFAULT_MESSAGE_LEVELS.ERROR %}
+            <div class="alert alert-danger">
+                {{msg}}
+            </div>
+
+            {% endif %}
+
+            {% endfor %}
+    <div class="row d-flex justify-content-center">
+        <table class="table table-bordered table-striped my-5">
+            <thead>
+                <tr>
+                    <th>Product Name</th>
+                    <th>Quantity</th>
+                    <th>Total Price</th>
+                    <th>Payment Status</th>
+                    <th>Order Status</th>
+                    <th>Payment Method</th>
+                    <th>Product Image</th>
+                    <th>Action</th>
+    
+                </tr>
+            </thead>
+            <tbody>
+                {% for item in items %}
+                <tr>
+                    <td>{{item.product.product_name}}</td>
+                    <td>{{item.quantity}}</td>
+                    <td>Rs.{{item.total_price}}</td>
+                    <td>{{item.payment_status}}</td>
+                    <td>{{item.status}}</td>
+                    <td>{{item.payment_method}}</td>
+                    <td><img src="/{{item.product.product_image}}" alt="{{item.product.product_name}}" width="100"></td>
+                    <td><a href="#" class="btn btn-primary"><i class="fas fa-edit"></i></a></td>
+                
+                      
+                        
+                    
+
+                </tr>
+                {% endfor %}
+            </tbody>
+
+        </table>
+
+    </div>
+</div>
+
+
+<!-- end of order section -->
+
+
+
+{% endblock %}

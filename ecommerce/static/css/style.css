@@ -1,0 +1,20 @@
+.carousel-item{
+    height: 550px;
+    object-fit: cover ;
+    
+}
+
+.card img{
+    height: 200px;
+    object-fit: cover;
+}
+
+footer{
+    background-color: black;
+    color: white;
+
+}
+
+footer .nav-link{
+    color: white !important;
+}

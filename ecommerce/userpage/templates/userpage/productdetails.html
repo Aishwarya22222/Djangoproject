@@ -1,0 +1,39 @@
+{% extends 'layouts.html' %}
+
+{% load static %}
+
+{% block title %}
+
+<title>Product Details</title>
+{% include 'userpage/header.html' %}
+{% endblock %}
+
+
+{% block main-content %}
+
+<!-- start of product detail section -->
+
+<div class="container">
+    <div class="row d-flex my-5 shadow justify-content-between p-3">
+        <div class="col-md-4">
+            <img src="/{{product.product_image}}" alt="{{product.product_name}}" width="200">
+        </div>
+        <div class="col-md-6">
+            <h2 class="card-title">{{product.product_name}}</h2>
+            <h2>Rs.{{product.product_price}}</h2>
+            <p>{{product.product_description}}</p>
+            <a href="/addtocart/{{product.id}}" class="btn btn-warning">Add to Cart</a>
+        </div>
+    </div>
+    </div>
+   
+
+
+<!-- end of product detail section -->
+
+
+
+
+{% include 'userpage/footer.html' %}
+{% endblock %}
+
